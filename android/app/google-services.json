@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "441495861898",
+    "project_id": "drivecare-b1f35",
+    "storage_bucket": "drivecare-b1f35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441495861898:android:9f24ebd94ca25f60ed8b73",
+        "android_client_info": {
+          "package_name": "com.example.drivecare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqsfxEQM6yS6hBwCF_qn6YbqmGhj1Lx90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
