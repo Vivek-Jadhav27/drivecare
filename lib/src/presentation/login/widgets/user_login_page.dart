@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:drivecare/src/presentation/background/loginback.dart';
 import 'package:drivecare/src/presentation/common/login_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -59,6 +60,7 @@ class _UserLoginPageState extends State<UserLoginPage>
             child: Stack(
               children: [
                 // const Frame59(),
+                LoginBackground(),
                 Positioned(
                   top: deviceHeight * 0.1,
                   // left: -5,
@@ -196,44 +198,44 @@ class _UserLoginPageState extends State<UserLoginPage>
                     ),
                   ),
                 ),
-                Positioned(
-                  left: deviceWidth * 0.01,
-                  bottom: deviceHeight * 0.01,
-                  child: Container(
-                    height: deviceHeight * 0.05,
-                    margin: EdgeInsets.symmetric(
-                      horizontal: deviceHeight * 0.025,
-                      vertical: deviceHeight * 0.025,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.black,
-                            ),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: ToggleButtons(
-                            borderColor: Colors.transparent,
-                            selectedBorderColor: Colors.transparent,
-                            selectedColor: Colors.black,
-                            fillColor: Colors.transparent,
-                            borderRadius: BorderRadius.circular(22),
-                            isSelected: [value.isUser, !value.isUser],
-                            onPressed: (index) {
-                              value.toggleUserAndAdmin(index);
-                            },
-                            direction: Axis.horizontal,
-                            children: widget.children,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                // (animationStatus == 0)?
+                // Positioned(
+                //   left: deviceWidth * 0.01,
+                //   bottom: deviceHeight * 0.01,
+                //   child: Container(
+                //     height: deviceHeight * 0.05,
+                //     margin: EdgeInsets.symmetric(
+                //       horizontal: deviceHeight * 0.025,
+                //       vertical: deviceHeight * 0.025,
+                //     ),
+                //     child: Row(
+                //       mainAxisAlignment: MainAxisAlignment.start,
+                //       children: [
+                //         Container(
+                //           decoration: BoxDecoration(
+                //             border: Border.all(
+                //               color: Colors.black,
+                //             ),
+                //             borderRadius: BorderRadius.circular(30),
+                //           ),
+                //           child: ToggleButtons(
+                //             borderColor: Colors.transparent,
+                //             selectedBorderColor: Colors.transparent,
+                //             selectedColor: Colors.black,
+                //             fillColor: Colors.transparent,
+                //             borderRadius: BorderRadius.circular(22),
+                //             isSelected: [value.isUser, !value.isUser],
+                //             onPressed: (index) {
+                //               value.toggleUserAndAdmin(index);
+                //             },
+                //             direction: Axis.horizontal,
+                //             children: widget.children,
+                //           ),
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
+                // // (animationStatus == 0)?
                 Positioned(
                   // height: deviceHeight,
                   bottom: (value.canSkip)

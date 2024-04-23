@@ -1,5 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:drivecare/src/presentation/customer/customer_service.dart';
+import 'package:drivecare/src/presentation/customer/providers/customer_service_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../common/card.dart';
 
 class CustomerHomePage extends StatefulWidget {
   const CustomerHomePage({Key? key}) : super(key: key);
@@ -14,7 +19,25 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
     final Size size = MediaQuery.of(context).size;
     final double appBarHeight = AppBar().preferredSize.height;
     final double carouselHeight = size.height * 0.2; // Adjust based on screen
-
+     List _title = [
+    "Periodic Service",
+    "Ac Service",
+    "TYRE Service",
+    "Battery Service"
+  ];
+  List _images = [
+    "assets/images/icons/Periodic_Service.png",
+    "assets/images/icons/Ac_Service.png",
+    "assets/images/icons/TYRE_Service.png",
+    "assets/images/icons/Battery_Service.png"
+  ];
+  List _title1 = [
+    "Denting & Painting",
+    "Car Wash",
+    "Detailing",
+    "Car Inspection"
+  ];
+ 
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -122,7 +145,67 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                   color: Colors.black,
                   fontSize: size.width * 0.05, // Responsive font size
                   fontWeight: FontWeight.bold,
+                ),  
+              ),
+               Container(
+                margin: EdgeInsets.only(top: 10, bottom: 10),
+                height: size.height * 0.2,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: 4,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          Provider.of<CustomerSerivceProvider>(
+                                context,
+                                listen: false,
+                              ).init();
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return CustomerServicePage();
+                          }));
+                        },
+                        child: CardView(
+                          title: _title[index],
+                          image: _images[index],
+                        ),
+                      );
+                    }),
+              ),
+              Text(
+                "Periodic Service",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
+              ),
+              Container(
+                height: size.height * 0.2,
+                margin: EdgeInsets.only(top: 10, bottom: 10),
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: false,
+                    itemCount: 4,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          Provider.of<CustomerSerivceProvider>(
+                                context,
+                                listen: false,
+                              ).init();
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return CustomerServicePage();
+                          }));
+                        },
+                        child: CardView(
+                          title: _title1[index],
+                          image: _images[index],
+                        ),
+                      );
+                    }),
               ),
               // Add other widgets here with responsive sizes
             ],

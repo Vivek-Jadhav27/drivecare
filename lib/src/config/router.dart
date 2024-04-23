@@ -1,5 +1,7 @@
 import 'package:drivecare/src/data/models/app_route.dart';
 import 'package:drivecare/src/presentation/customer/customer_main_page.dart';
+import 'package:drivecare/src/presentation/customer/providers/customer_cart_provider.dart';
+import 'package:drivecare/src/presentation/customer/providers/customer_service_provider.dart';
 import 'package:drivecare/src/presentation/customer/widgets/customer_home_page.dart';
 import 'package:drivecare/src/presentation/customer/widgets/customer_profile_page.dart';
 import 'package:drivecare/src/presentation/login/login_page.dart';
@@ -13,7 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../presentation/error/error_page.dart';
 import '../presentation/login/provider/login_provider.dart';
-import '../presentation/signup/garrage_signup_page.dart';
+// import '../presentation/signup/garrage_signup_page.dart';
 import '../utils/constants/routes.dart';
 
 class AppRouter {
@@ -26,7 +28,7 @@ class AppRouter {
         AppRoute(route: Routes.customerhomepage, view: const CustomerHomePage()),
         AppRoute(route: Routes.customermainpage, view: const CustomerMainPage()),
         AppRoute(route: Routes.customerprofilepage,view: const CustomerProfilePage()),
-        AppRoute(route: Routes.garagesignuppage, view: const GarageSignUpPage()),
+        // AppRoute(route: Routes.garagesignuppage, view: const GarageSignUpPage()),
       ];
 
   static Route onGenerateRoute(RouteSettings settings) {
@@ -85,5 +87,7 @@ class AppRouter {
         ChangeNotifierProvider(create: (context) => LoginProvider()),
         ChangeNotifierProvider(create: (context) => UserSignUpProvider()),
         ChangeNotifierProvider(create: (context) => AdminSignUpProvider()),
+        ChangeNotifierProvider(create: (context) => CustomerSerivceProvider()),
+        ChangeNotifierProvider(create: (context) => CustomerCartProvider()),
       ];
 }

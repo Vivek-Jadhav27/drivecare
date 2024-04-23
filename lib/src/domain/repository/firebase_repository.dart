@@ -50,7 +50,7 @@ class FirebaseRepository {
         ));
       }
 
-      //  Navigator.pushNamed(context, route.questinnaire);
+       Navigator.pushNamed(context, Routes.customermainpage);
     } catch (e) {
       print('Login failed: $e');
       String error = e.toString();

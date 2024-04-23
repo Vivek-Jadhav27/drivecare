@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../background/frame94.dart';
 import '../common/login_text_field.dart';
 import 'providers/user_signup_provider.dart';
 
@@ -52,7 +53,7 @@ class _UserSignupPageState extends State<UserSignupPage>
             child: Stack(
               alignment: Alignment.center,
               children: [
-                // const Frame94(),
+                const Frame94(),
                 Container(
                   height: deviceHeight,
                   width: deviceWidth,

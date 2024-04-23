@@ -19,5 +19,14 @@ class Routes {
 
   static String garagesignuppage = '/garagesignuppage';
 
+  static String underveri = '/underveri';
+
+  static String adminservices = '/adminservices';
+
+  static String adminserviceslist = '/adminserviceslist';
+
+  static String adminrequests = '/adminrequests';
+
+  static String adminsettings = '/adminsettings';
 
 }

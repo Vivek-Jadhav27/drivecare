@@ -21,7 +21,7 @@ class _WelcomePageState extends State<WelcomePage> {
         //backgroundColor: Themes.theme[Global.theme].secondaryColor,
         body: GestureDetector(
       onTap: () {
-        Global.isloggedin ? Global.isuser? Navigator.pushNamed(context, Routes.customermainpage): Navigator.pushNamed(context, Routes.adminhome) : Navigator.pushNamed(context, Routes.login); 
+        Global.isloggedin ? Navigator.pushNamed(context, Routes.customermainpage) : Navigator.pushNamed(context, Routes.login); 
        
       },
       child: SafeArea(

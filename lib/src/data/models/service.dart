@@ -4,28 +4,40 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Service {
   String id;
-  String name;
+  String serviceName;
+  String description;
+  String imageURL;
+  String garageId;
   double price;
 
   Service({
     required this.id,
-    required this.name,
-    required this.price,
+    required this.serviceName,
+    required this.price, 
+    required this.description, 
+    required this.imageURL,
+    required this.garageId
   });
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
-      'name': name,
+      'serviceName': serviceName,
       'price': price,
+      'description': description,
+      'imageURL': imageURL,
+      'garageId': garageId
     };
   }
 
   factory Service.fromMap(Map<String, dynamic> map) {
     return Service(
       id: map['id'] as String,
-      name: map['name'] as String,
-      price: map['price'] as double,
+      serviceName: map['serviceName'] as String,
+      price: map['price'] as double, 
+      description: map['description'] as String,
+      imageURL: map['imageURL'] as String,
+      garageId: map['garageId'] as String
     );
   }
 
@@ -38,8 +50,11 @@ class Service {
     Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
     return Service(
       id: doc.id,
-      name: data['name'] as String,
+      serviceName: data['serviceName'] as String,
       price: (data['price'] as num).toDouble(),
+      description: data['description'] as String,
+      imageURL: data['imageURL'] as String,
+      garageId: data['garageId'] as String
     );
   }
 }
