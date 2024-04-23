@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../presentation/error/error_page.dart';
 import '../presentation/login/provider/login_provider.dart';
+import '../presentation/signup/garrage_signup_page.dart';
 import '../utils/constants/routes.dart';
 
 class AppRouter {
@@ -25,6 +26,7 @@ class AppRouter {
         AppRoute(route: Routes.customerhomepage, view: const CustomerHomePage()),
         AppRoute(route: Routes.customermainpage, view: const CustomerMainPage()),
         AppRoute(route: Routes.customerprofilepage,view: const CustomerProfilePage()),
+        AppRoute(route: Routes.garagesignuppage, view: const GarageSignUpPage()),
       ];
 
   static Route onGenerateRoute(RouteSettings settings) {

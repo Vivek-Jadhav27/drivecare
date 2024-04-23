@@ -17,5 +17,7 @@ class Routes {
 
   static String adminhome = '/adminhome';
 
+  static String garagesignuppage = '/garagesignuppage';
+
 
 }
